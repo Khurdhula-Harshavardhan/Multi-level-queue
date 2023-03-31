@@ -1,5 +1,13 @@
 [CPU] CPU has been initialized successfully.
 [Q-A] Queue A has been initialized successfully.
+[I/O] Asking user for job file name.
+[I/O] User entered the following string for job file name: TestCase.txt
+[I/O] Asking user for Dispatch Ratio.
+[I/O] User entered the following value for Dispatch Ratio: 4
+[I/O] Asking user for Demotion Criteria.
+[I/O] User entered the following value for Demotion Criteria: 5
+[I/O] Reading file: TestCase.txt
+[I/O] Converting data within file:TestCase.txt
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 0
 [PROCESS] New process P1 has arrived.
