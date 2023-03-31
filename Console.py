@@ -6,13 +6,14 @@ In-order to achieve this, I shall write a new Component/Class that will implemen
 
 class Console():
     __file_handler = None #object that will help us handle the file.
-    __history: list() = None #list that will store all activities.
+    __history: list() = list() #list that will store all activities.
     def __init__(self) -> None:
         try:
             self.FILE_NAME: str() = "log.txt"
-            self.__file_handler = open(file= self.FILE_NAME, OpenTextMode = "w", encoding="UTF-8")
+            self.__file_handler = open(self.FILE_NAME, "w", encoding="UTF-8")
+            
         except Exception as e:
-            print("[ERR] FATAL ERROR, FAILED TO LOAD CONSOLE OBJECT.")
+            print("[ERR] FATAL ERROR, FAILED TO LOAD CONSOLE OBJECT: "+str(e))
 
     def note_activity(self, activity: str()) -> None:
         """
@@ -25,3 +26,17 @@ class Console():
                 self.__history.append(activity)
         except Exception as e:
             print("[ERR] The following error occured while trying to take note of the activity: "+str(e))
+    
+    def flush(self) -> bool:
+        """
+        This method allows Console to flush out all the information stored within the __history list to an actual text file named: log.txt
+        """
+        try:
+            print("[INFO] Trying to write all activity to log.txt")
+            if len(self.__history) == 0:
+                raise Exception("No previous activities found!")
+            else:
+                self.__file_handler.write("\n".join(self.__history))
+                print("[INFO] log.txt updated successfully.")
+        except Exception as e:
+            print("[ERR] The following error occured while trying to flush history to a log file: %s"%(str(e)))

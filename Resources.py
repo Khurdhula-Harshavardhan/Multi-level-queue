@@ -4,6 +4,8 @@ that might be needed inorder to implement a multi level feedback queue.
     -Harsha Vardhan, Khurdula 2023.
 """
 
+#We need a global Console object that can be used to maintain a log of all acitivity.
+
 class Process():
     name = None
     burst_time = None
