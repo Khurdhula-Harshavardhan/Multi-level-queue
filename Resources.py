@@ -34,7 +34,7 @@ class Process():
             self.context_switches = 0
             self.remaining_burst_time = self.burst_time
             self.is_complete = False
-            self.console.note_activity("[PROCESS] New process " + str(self.name) +" has arrived.")
+            self.console.note_activity("[PROCESS] New process " + str(self.name) +" has arrived, with burst time: "+str(self.burst_time))
         except Exception as e:
             print("[ERR] The following error occured while trying to create a new process: "+str(e))
 

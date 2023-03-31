@@ -13,10 +13,12 @@ class Simulation():
     __dispatch_ratio = None
     __demotion_criteria = None
     __data = None
+    __total_processes = None
     def __init__(self) -> None:
         self.console = Console()
         self.cpu = CPU(self.console)
         self.qa = Queue_A(self.console)
+        self.__total_processes =0
     
     def convert_data(self) -> None:
         """
@@ -34,7 +36,14 @@ class Simulation():
         except Exception as e:
             print("[ERR] The following error occured while trying to read job file: "+str(e))
 
-        
+    def data_is_empty(self) -> bool:
+        """
+        Checks if there are no new jobs incoming:
+        """
+        if len(self.data) == 0:
+            return True
+        else:
+            return False
 
     def run(self) -> None:
         """
@@ -59,18 +68,32 @@ class Simulation():
             self.console.note_activity("[I/O] Converting data within file:" +file_name)
             print(self.data)
 
+            clock = 0
+            self.__total_processes = 0
             #Begin Execution.
-            for i in range(10):
-                self.cpu.update_clock_cycle(i)
-                process = Process(name= "P"+str(i+1), burst_time=i+1, console=self.console)
-                self.qa.add_process_to_waiting(process= process)
+            while not self.data_is_empty() or not self.qa.is_empty():
+                self.cpu.update_clock_cycle(clock)
+                
+                if not self.data_is_empty():
+                    self.console.note_activity("[I/O] Checking for any incoming jobs at current clock.")
+                    new_process_burst_time = self.data[0]
+                    self.data.pop(0)
+
+                    if new_process_burst_time!=-1:
+                        process = Process("P"+str(self.__total_processes+1), new_process_burst_time, self.console)
+                        self.qa.add_process_to_waiting(process=process)
+                
                 previous_process = self.cpu.held_by
                 
                 process = self.qa.pick_process()
                 
                 self.cpu.give_access(process)
                 if previous_process!=None:
-                    self.qa.add_process_to_waiting(previous_process)
+                    previous_process.set_remaining_time(1)
+                    if previous_process.is_complete:
+                        pass
+                    else:
+                        self.qa.add_process_to_waiting(previous_process)
         except Exception as e:
             print("[ERR] The following error occured while execution: "+str(e))
 
