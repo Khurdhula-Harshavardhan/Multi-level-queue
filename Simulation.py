@@ -17,6 +17,7 @@ class Simulation():
         for i in range(10):
             cpu.update_clock_cycle(i)
             process = Process(name= "P"+str(i+1), burst_time=i+1, console=self.console)
+            cpu.give_access(process)
             Qa.add_process_to_waiting(process= process)
 
     def __del__(self) -> None:

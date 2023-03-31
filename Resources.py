@@ -140,9 +140,14 @@ class CPU():
         else:
             if self.held_by == None:
                 self.console.note_activity("[CPU] Is currently idle.")
-            else:
-                self.console.note_activity("[CPU] process "+process.name+" has left the CPU.")
+                self.held_by = process
                 self.console.note_activity("[CPU] Process "+process.name+" is now using the CPU.")
+                
+            else:
+                self.console.note_activity("[CPU] Process "+self.held_by.name+" has left the CPU.")
+                self.held_by = process
+                self.console.note_activity("[CPU] Process "+process.name+" is now using the CPU.")
+                
     
     def update_clock_cycle(self, clock_cycle) -> None:
         self.current_clock_cycle = clock_cycle

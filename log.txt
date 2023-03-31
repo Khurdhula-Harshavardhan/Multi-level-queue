@@ -2,40 +2,60 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 0
 [PROCESS] New process P1 has arrived.
+[CPU] Is currently idle.
+[CPU] Process P1 is now using the CPU.
 [INFO] Process P1 has been added to waiting list of Queue A successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 1
 [PROCESS] New process P2 has arrived.
+[CPU] Process P1 has left the CPU.
+[CPU] Process P2 is now using the CPU.
 [INFO] Process P2 has been added to waiting list of Queue A successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 2
 [PROCESS] New process P3 has arrived.
+[CPU] Process P2 has left the CPU.
+[CPU] Process P3 is now using the CPU.
 [INFO] Process P3 has been added to waiting list of Queue A successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 3
 [PROCESS] New process P4 has arrived.
+[CPU] Process P3 has left the CPU.
+[CPU] Process P4 is now using the CPU.
 [INFO] Process P4 has been added to waiting list of Queue A successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 4
 [PROCESS] New process P5 has arrived.
+[CPU] Process P4 has left the CPU.
+[CPU] Process P5 is now using the CPU.
 [INFO] Process P5 has been added to waiting list of Queue A successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 5
 [PROCESS] New process P6 has arrived.
+[CPU] Process P5 has left the CPU.
+[CPU] Process P6 is now using the CPU.
 [INFO] Process P6 has been added to waiting list of Queue A successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 6
 [PROCESS] New process P7 has arrived.
+[CPU] Process P6 has left the CPU.
+[CPU] Process P7 is now using the CPU.
 [INFO] Process P7 has been added to waiting list of Queue A successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 7
 [PROCESS] New process P8 has arrived.
+[CPU] Process P7 has left the CPU.
+[CPU] Process P8 is now using the CPU.
 [INFO] Process P8 has been added to waiting list of Queue A successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 8
 [PROCESS] New process P9 has arrived.
+[CPU] Process P8 has left the CPU.
+[CPU] Process P9 is now using the CPU.
 [INFO] Process P9 has been added to waiting list of Queue A successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 9
 [PROCESS] New process P10 has arrived.
+[CPU] Process P9 has left the CPU.
+[CPU] Process P10 is now using the CPU.
 [INFO] Process P10 has been added to waiting list of Queue A successfully.
