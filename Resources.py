@@ -5,6 +5,8 @@ that might be needed inorder to implement a multi level feedback queue.
 """
 
 #We need a global Console object that can be used to maintain a log of all acitivity.
+from Console import Console
+console = Console()
 
 class Process():
     name = None
@@ -32,6 +34,7 @@ class Process():
             self.context_switches = 0
             self.remaining_burst_time = self.burst_time
             self.is_complete = False
+            console.note_activity("[PROCESS] New process " + str(self.name) +" has been created successfully.")
         except Exception as e:
             print("[ERR] The following error occured while trying to create a new process: "+str(e))
 
@@ -40,6 +43,7 @@ class Process():
         Increases the total_wait_time of the process by 1
         """
         self.wait_time = self.wait_time + 1
+        console.note_activity("[PROCESS] wait time of process: " +str(self.name) + " has been increased by 1.")
 
     def get_remaining_time(self) -> int():
         """
@@ -52,10 +56,12 @@ class Process():
         Reduces the total waiting time by given time.
         """
         self.remaining_burst_time = self.remaining_burst_time - time
+        
         if self.remaining_burst_time <= 0:
             self.remaining_burst_time = 0
             self.is_complete = True
-        
+            console.note_activity("[PROCESS] Process : " +str(self.name) + " has completed its total execution.")
+        console.note_activity("[PROCESS] Remaining burst time of process: " +str(self.name) + " has been updated to "+ str(self.remaining_burst_time))
 
 class Queue_A():
     __NAME = None
@@ -81,6 +87,7 @@ class Queue_A():
             #lets define the time_quantum for the queue.
             self.__TIME_QUANTUM = 5
             self.__NAME = "A"
+            console.note_activity("[INFO] Queue A has been initialized successfully.")
         except Exception as e:
             print("[ERR] The following error occured while trying to initialize a new Queue: "+str(e))
 
@@ -101,5 +108,6 @@ class Queue_A():
         """
         try:
             self.__waiting.append(process)
+            console.note_activity("[INFO] Process " + process.name + " has been added to waiting list of Queue A successfully.")
         except Exception as e:
             print("[ERR] The following error occured while trying to add the new process to the Queue A waiting list: %s"%(str(e)))
