@@ -77,7 +77,6 @@ class Queue_A():
     Front (pick process from here) -  [p1, p2, p5, ...] - Rear (adds processes here).
     """
     __waiting = list() 
-
     
     def __init__(self, console) -> None:
         """
@@ -88,7 +87,7 @@ class Queue_A():
             self.__TIME_QUANTUM = 5
             self.__NAME = "A"
             self.console = console
-            self.console.note_activity("[INFO] Queue A has been initialized successfully.")
+            self.console.note_activity("[Q-A] Queue A has been initialized successfully.")
         except Exception as e:
             print("[ERR] The following error occured while trying to initialize a new Queue: "+str(e))
 
@@ -102,16 +101,40 @@ class Queue_A():
             return True
         else:
             return False
-
+        
+    def get_waiting_process(self) -> str():
+        """
+        Returns a string of processes waiting within Queue A.
+        """
+        processes = [process.name for process in self.__waiting]
+        return "[" + ", ".join(processes) +"]"
+    
     def add_process_to_waiting(self, process: Process) -> bool:
         """
         This method receives a process and then adds it to the waiting list.
         """
         try:
             self.__waiting.append(process)
-            self.console.note_activity("[INFO] Process " + process.name + " has been added to waiting list of Queue A successfully.")
+            self.console.note_activity("[Q-A] Process " + process.name + " has been added to waiting list of Queue A successfully.")
+            self.console.note_activity("[Q-A] The Queue A contains processes: "+self.get_waiting_process())
         except Exception as e:
             print("[ERR] The following error occured while trying to add the new process to the Queue A waiting list: %s"%(str(e)))
+
+    def pick_process(self) -> Process:
+        try:
+            if self.is_empty():
+                self.console.note_activity("[Q-A] The waiting list is empty, there is no process available in order to be picked.")
+            else:
+                process = self.__waiting[0]
+                
+                self.__waiting.remove(process)
+                self.console.note_activity("[Q-A] Process "+process.name+" has been picked from Queue A.")
+                self.console.note_activity("[Q-A] The Queue A now contains processes: "+self.get_waiting_process())
+                
+                return process
+                
+        except Exception as e:
+            print("[ERR] The following error occured while trying to pick a process from Queue A: "+str(e))
 
 class CPU():
     held_by = None
@@ -119,6 +142,7 @@ class CPU():
     console = None
     def __init__(self, console) -> None:
         self.console = console
+        self.console.note_activity("[CPU] CPU has been initialized successfully.")
 
     def is_held_by(self, process) -> bool:
         """

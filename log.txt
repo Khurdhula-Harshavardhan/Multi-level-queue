@@ -1,61 +1,110 @@
-[INFO] Queue A has been initialized successfully.
+[CPU] CPU has been initialized successfully.
+[Q-A] Queue A has been initialized successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 0
 [PROCESS] New process P1 has arrived.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
-[INFO] Process P1 has been added to waiting list of Queue A successfully.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 1
 [PROCESS] New process P2 has arrived.
+[Q-A] Process P2 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P2]
+[Q-A] Process P2 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
 [CPU] Process P1 has left the CPU.
 [CPU] Process P2 is now using the CPU.
-[INFO] Process P2 has been added to waiting list of Queue A successfully.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 2
 [PROCESS] New process P3 has arrived.
+[Q-A] Process P3 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1, P3]
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: [P3]
 [CPU] Process P2 has left the CPU.
-[CPU] Process P3 is now using the CPU.
-[INFO] Process P3 has been added to waiting list of Queue A successfully.
+[CPU] Process P1 is now using the CPU.
+[Q-A] Process P2 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P3, P2]
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 3
 [PROCESS] New process P4 has arrived.
-[CPU] Process P3 has left the CPU.
-[CPU] Process P4 is now using the CPU.
-[INFO] Process P4 has been added to waiting list of Queue A successfully.
+[Q-A] Process P4 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P3, P2, P4]
+[Q-A] Process P3 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: [P2, P4]
+[CPU] Process P1 has left the CPU.
+[CPU] Process P3 is now using the CPU.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P2, P4, P1]
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 4
 [PROCESS] New process P5 has arrived.
-[CPU] Process P4 has left the CPU.
-[CPU] Process P5 is now using the CPU.
-[INFO] Process P5 has been added to waiting list of Queue A successfully.
+[Q-A] Process P5 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P2, P4, P1, P5]
+[Q-A] Process P2 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: [P4, P1, P5]
+[CPU] Process P3 has left the CPU.
+[CPU] Process P2 is now using the CPU.
+[Q-A] Process P3 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P4, P1, P5, P3]
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 5
 [PROCESS] New process P6 has arrived.
-[CPU] Process P5 has left the CPU.
-[CPU] Process P6 is now using the CPU.
-[INFO] Process P6 has been added to waiting list of Queue A successfully.
+[Q-A] Process P6 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P4, P1, P5, P3, P6]
+[Q-A] Process P4 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: [P1, P5, P3, P6]
+[CPU] Process P2 has left the CPU.
+[CPU] Process P4 is now using the CPU.
+[Q-A] Process P2 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1, P5, P3, P6, P2]
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 6
 [PROCESS] New process P7 has arrived.
-[CPU] Process P6 has left the CPU.
-[CPU] Process P7 is now using the CPU.
-[INFO] Process P7 has been added to waiting list of Queue A successfully.
+[Q-A] Process P7 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1, P5, P3, P6, P2, P7]
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: [P5, P3, P6, P2, P7]
+[CPU] Process P4 has left the CPU.
+[CPU] Process P1 is now using the CPU.
+[Q-A] Process P4 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P5, P3, P6, P2, P7, P4]
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 7
 [PROCESS] New process P8 has arrived.
-[CPU] Process P7 has left the CPU.
-[CPU] Process P8 is now using the CPU.
-[INFO] Process P8 has been added to waiting list of Queue A successfully.
+[Q-A] Process P8 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P5, P3, P6, P2, P7, P4, P8]
+[Q-A] Process P5 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: [P3, P6, P2, P7, P4, P8]
+[CPU] Process P1 has left the CPU.
+[CPU] Process P5 is now using the CPU.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P3, P6, P2, P7, P4, P8, P1]
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 8
 [PROCESS] New process P9 has arrived.
-[CPU] Process P8 has left the CPU.
-[CPU] Process P9 is now using the CPU.
-[INFO] Process P9 has been added to waiting list of Queue A successfully.
+[Q-A] Process P9 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P3, P6, P2, P7, P4, P8, P1, P9]
+[Q-A] Process P3 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: [P6, P2, P7, P4, P8, P1, P9]
+[CPU] Process P5 has left the CPU.
+[CPU] Process P3 is now using the CPU.
+[Q-A] Process P5 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P6, P2, P7, P4, P8, P1, P9, P5]
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 9
 [PROCESS] New process P10 has arrived.
-[CPU] Process P9 has left the CPU.
-[CPU] Process P10 is now using the CPU.
-[INFO] Process P10 has been added to waiting list of Queue A successfully.
+[Q-A] Process P10 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P6, P2, P7, P4, P8, P1, P9, P5, P10]
+[Q-A] Process P6 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: [P2, P7, P4, P8, P1, P9, P5, P10]
+[CPU] Process P3 has left the CPU.
+[CPU] Process P6 is now using the CPU.
+[Q-A] Process P3 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P2, P7, P4, P8, P1, P9, P5, P10, P3]
