@@ -15,9 +15,9 @@ class Process():
     is_complete = None
     quantum = None
     time_spent_in_cpu = None
+    arrival_time = None
 
-
-    def __init__(self, name: str(), burst_time: float(), console) -> None:
+    def __init__(self, name: str(), burst_time: float(), arrival_time: float(),console) -> None:
         """
         Initializes the process properties, that are unique to each process.
         """
@@ -38,10 +38,16 @@ class Process():
             self.is_complete = False
             self.quantum = 5
             self.time_spent_in_cpu = 0
-            
+            self.arrival_time = arrival_time
             self.console.note_activity("[PROCESS] New process " + str(self.name) +" has arrived, with burst time: "+str(self.burst_time))
         except Exception as e:
             print("[ERR] The following error occured while trying to create a new process: "+str(e))
+
+    def get_arrival_time(self) -> float:
+        """
+        Returns the arrival time of a process.
+        """
+        return self.arrival_time
 
     def increase_wait_time(self) -> None:
         """

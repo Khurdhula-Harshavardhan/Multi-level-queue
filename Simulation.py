@@ -102,7 +102,7 @@ class Simulation():
                     self.data.pop(0)
 
                     if new_process_burst_time!=-1:
-                        process = Process("P"+str(self.__total_processes+1), new_process_burst_time, self.console)
+                        process = Process("P"+str(self.__total_processes+1), new_process_burst_time, clock, self.console)
                         self.__total_processes = self.__total_processes+1
                         self.qa.add_process_to_waiting(process=process) #add a process to queue if there is a process coming in.
                     else:
