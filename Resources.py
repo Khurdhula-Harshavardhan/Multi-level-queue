@@ -80,6 +80,19 @@ class Process():
             self.is_complete = True
             self.console.note_activity("[PROCESS] Process : " +str(self.name) + " has completed its total execution.")
         self.console.note_activity("[PROCESS] Remaining burst time of process: " +str(self.name) + " has been updated to "+ str(self.remaining_burst_time))
+    
+    def increase_context_switches(self) -> None:
+        """
+        Increases the count of Context Switches of the process by 1, when it is granted with CPU access.
+        """
+        self.context_switches = self.context_switches + 1
+        self.console.note_activity("[PROCESS] Process "+self.name+ " total context switches has been updated to: "+str(self.context_switches))
+
+    def set_completion_time(self, clock) -> None:
+        """
+        Sets completion time to given period of clock cycle.
+        """
+        self.time_of_completion = clock  
 
 class Queue_A():
     __NAME = None
@@ -241,7 +254,8 @@ class CPU():
                 self.console.note_activity("[CPU] Process "+self.held_by.name+" has left the CPU.")
                 self.held_by = process
                 self.console.note_activity("[CPU] Process "+process.name+" is now using the CPU.")
-                
+            process.increase_context_switches()
+              
     
     def update_clock_cycle(self, clock_cycle) -> None:
         self.current_clock_cycle = clock_cycle

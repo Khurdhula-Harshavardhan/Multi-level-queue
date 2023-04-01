@@ -76,6 +76,8 @@ class Simulation():
                 print("Arrived at: "+str(process.get_arrival_time()))
                 print("Burst Time: "+str(process.burst_time))
                 print("Total waiting time: "+str(process.wait_time))
+                print("Total context switches: "+str(process.context_switches))
+                print("Time of Completion: ")
 
 
         except Exception as e:

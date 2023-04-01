@@ -23,6 +23,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 1
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 1
 [Q-A] Checking for processes that can be cleaned up.
@@ -97,6 +98,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 2
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 7
 [Q-A] Checking for processes that can be cleaned up.
@@ -171,6 +173,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 3
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 13
 [Q-A] Checking for processes that can be cleaned up.
@@ -245,6 +248,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 4
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 19
 [Q-A] Checking for processes that can be cleaned up.
@@ -305,6 +309,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Process P1 has left the CPU.
 [CPU] Process P2 is now using the CPU.
+[PROCESS] Process P2 total context switches has been updated to: 1
 [Q-A] Process P1 has been added to waiting list of Queue A successfully.
 [Q-A] The Queue A contains processes: [P1]
 --------------------------------------------------
@@ -362,6 +367,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Process P2 has left the CPU.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 5
 [Q-A] Process P2 has been added to waiting list of Queue A successfully.
 [Q-A] The Queue A contains processes: [P2]
 --------------------------------------------------
@@ -419,6 +425,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Process P1 has left the CPU.
 [CPU] Process P2 is now using the CPU.
+[PROCESS] Process P2 total context switches has been updated to: 2
 [Q-A] Process P1 has been added to waiting list of Queue A successfully.
 [Q-A] The Queue A contains processes: [P1]
 --------------------------------------------------
@@ -437,6 +444,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Process P2 has left the CPU.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 6
 [M-Q] Process P2 has been added to list of finished processes.
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 35
@@ -500,6 +508,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 7
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 41
 [Q-A] Checking for processes that can be cleaned up.
@@ -562,6 +571,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 8
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 47
 [Q-A] Checking for processes that can be cleaned up.
@@ -624,6 +634,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 9
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 53
 [Q-A] Checking for processes that can be cleaned up.
@@ -686,6 +697,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 10
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 59
 [Q-A] Checking for processes that can be cleaned up.
@@ -748,6 +760,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 11
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 65
 [Q-A] Checking for processes that can be cleaned up.
@@ -810,6 +823,7 @@
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
+[PROCESS] Process P1 total context switches has been updated to: 12
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 71
 [Q-A] Checking for processes that can be cleaned up.
