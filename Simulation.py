@@ -62,6 +62,24 @@ class Simulation():
         else:
             self.console.note_activity("[PROCESS] Process "+ process.name + " has not used up its time quantum.")
             return False
+        
+    def view_statistics(self) -> None:
+        """
+        This method, is called after all process have been completed.
+        """
+        try:
+            print("-"*75)
+            print("The following are the process statistics in the order of their completion:")
+            for process in self.__completed_processes:
+                stars = " *"*5
+                print(stars+" Process Name: "+process.name+stars)
+                print("Arrived at: "+str(process.get_arrival_time()))
+                print("Burst Time: "+str(process.burst_time))
+                print("Total waiting time: "+str(process.wait_time))
+
+
+        except Exception as e:
+            print("[ERR] The following error occured while trying to display statistics: "+str(e))
 
     def run(self) -> None:
         """
@@ -135,11 +153,10 @@ class Simulation():
                         else:
                             self.qa.add_process_to_waiting(current_process)
                         
-                    
-                        
-
+                
                 #update clock
                 clock = clock + 1
+            self.view_statistics()
         except Exception as e:
             print("[ERR] The following error occured while execution: "+str(e))
 

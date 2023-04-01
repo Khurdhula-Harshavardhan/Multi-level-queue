@@ -86,6 +86,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 6
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [I/O] Checking for any incoming jobs at current clock.
 [I/O] No process has arrived at current clock cycle.
@@ -159,6 +160,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 12
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [I/O] Checking for any incoming jobs at current clock.
 [I/O] No process has arrived at current clock cycle.
@@ -232,6 +234,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 18
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [I/O] Checking for any incoming jobs at current clock.
 [I/O] No process has arrived at current clock cycle.
@@ -280,6 +283,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 22
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P2 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P1
@@ -289,6 +293,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 23
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P2 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P1
@@ -305,6 +310,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 24
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P2
@@ -314,6 +320,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 25
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P2
@@ -323,6 +330,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 26
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P2
@@ -332,6 +340,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 27
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P2
@@ -341,6 +350,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 28
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P2
@@ -357,6 +367,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 29
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P2 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P1
@@ -366,6 +377,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 30
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P2 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P1
@@ -375,6 +387,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 31
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P2 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P1
@@ -384,6 +397,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 32
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P2 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P1
@@ -393,6 +407,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 33
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P2 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P1
@@ -409,6 +424,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 34
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU is not idle, and is held by process: P2
@@ -475,6 +491,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 40
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU IS IDLE.
@@ -536,6 +553,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 46
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU IS IDLE.
@@ -597,6 +615,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 52
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU IS IDLE.
@@ -658,6 +677,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 58
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU IS IDLE.
@@ -719,6 +739,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 64
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU IS IDLE.
@@ -780,6 +801,7 @@
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 70
 [Q-A] Checking for processes that can be cleaned up.
+[PROCESS] wait time of process: P1 has been increased by 1.
 [Q-A] No process needs clean up in Queue A.
 [CPU] Checking if CPU is idle.
 [CPU] CPU IS IDLE.

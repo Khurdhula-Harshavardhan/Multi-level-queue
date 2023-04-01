@@ -16,6 +16,7 @@ class Process():
     quantum = None
     time_spent_in_cpu = None
     arrival_time = None
+    time_of_completion = None
 
     def __init__(self, name: str(), burst_time: float(), arrival_time: float(),console) -> None:
         """
