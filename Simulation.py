@@ -14,6 +14,8 @@ class Simulation():
     __demotion_criteria = None
     __data = None
     __total_processes = None
+    __completed_processes = list()
+
     def __init__(self) -> None:
         self.console = Console()
         self.cpu = CPU(self.console)
@@ -44,6 +46,22 @@ class Simulation():
             return True
         else:
             return False
+        
+    def should_yield(self, process) -> bool:
+        """
+        Checks if the current process has ran out of its assigned time quantum, we must swap only then.
+        Returns true if the process has used its time quantum,
+        false otherwise.
+        """
+        if process.is_complete:
+            self.console.note_activity("[PROCESS] Process "+process.name +" is now fulfilled.")
+            return True
+        elif process.time_spent_in_cpu % process.quantum == 0:
+            self.console.note_activity("[PROCESS] Process "+ process.name + " has used up its time quantum.")
+            return True
+        else:
+            self.console.note_activity("[PROCESS] Process "+ process.name + " has not used up its time quantum.")
+            return False
 
     def run(self) -> None:
         """
@@ -71,9 +89,13 @@ class Simulation():
             clock = 0
             self.__total_processes = 0
             #Begin Execution.
-            while not self.data_is_empty() or not self.qa.is_empty():
+            while not self.data_is_empty() or not self.qa.is_empty() or not self.cpu.is_idle():
                 self.cpu.update_clock_cycle(clock)
                 
+                #check for processes that have been completed in previous cycles and remove them completely.
+                self.qa.clean_up()
+
+                #check for incoming new processes.
                 if not self.data_is_empty():
                     self.console.note_activity("[I/O] Checking for any incoming jobs at current clock.")
                     new_process_burst_time = self.data[0]
@@ -81,19 +103,43 @@ class Simulation():
 
                     if new_process_burst_time!=-1:
                         process = Process("P"+str(self.__total_processes+1), new_process_burst_time, self.console)
-                        self.qa.add_process_to_waiting(process=process)
-                
-                previous_process = self.cpu.held_by
-                
-                process = self.qa.pick_process()
-                
-                self.cpu.give_access(process)
-                if previous_process!=None:
-                    previous_process.set_remaining_time(1)
-                    if previous_process.is_complete:
-                        pass
+                        self.__total_processes = self.__total_processes+1
+                        self.qa.add_process_to_waiting(process=process) #add a process to queue if there is a process coming in.
                     else:
-                        self.qa.add_process_to_waiting(previous_process)
+                        self.console.note_activity("[I/O] No process has arrived at current clock cycle.")
+                
+                self.console.note_activity("[CPU] Checking if CPU is idle.")
+                #Check if CPU is currently IDLE.
+                if self.cpu.is_idle():
+                    self.console.note_activity("[CPU] CPU IS IDLE.")
+                    process = self.qa.pick_process()
+                    self.cpu.give_access(process=process)
+                else:
+                    #CPU is not idle.
+                    
+                    current_process = self.cpu.get_current_user()
+                    self.console.note_activity("[CPU] CPU is not idle, and is held by process: "+current_process.name)
+                    current_process.set_remaining_time(1)
+                    current_process.increase_time_in_cpu()
+
+                    
+                    
+                    self.console.note_activity("[PROCESS] Checking if the process "+ current_process.name+ " has used its current time quantum.")
+                    if self.should_yield(current_process):
+                        process = self.qa.pick_process()
+                            
+                        self.cpu.give_access(process)
+                        if current_process!=None and current_process.is_complete:
+                            self.__completed_processes.append(current_process)
+                            self.console.note_activity("[M-Q] Process "+current_process.name+" has been added to list of finished processes.")
+                        else:
+                            self.qa.add_process_to_waiting(current_process)
+                        
+                    
+                        
+
+                #update clock
+                clock = clock + 1
         except Exception as e:
             print("[ERR] The following error occured while execution: "+str(e))
 

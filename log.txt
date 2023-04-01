@@ -10,16 +10,831 @@
 [I/O] Converting data within file:TestCase.txt
 --------------------------------------------------
 [CPU] Current Clock Cycle has been updated to: 0
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
 [I/O] Checking for any incoming jobs at current clock.
-[PROCESS] New process P1 has arrived.
+[PROCESS] New process P1 has arrived, with burst time: 60
 [Q-A] Process P1 has been added to waiting list of Queue A successfully.
 [Q-A] The Queue A contains processes: [P1]
+[CPU] Checking if CPU is idle.
+[CPU] CPU IS IDLE.
+[Q-A] Trying to Pick a new process from Queue A.
 [Q-A] Process P1 has been picked from Queue A.
 [Q-A] The Queue A now contains processes: []
 [CPU] Is currently idle.
 [CPU] Process P1 is now using the CPU.
 --------------------------------------------------
-[CPU] Current Clock Cycle has been updated to: 0
+[CPU] Current Clock Cycle has been updated to: 1
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
 [I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 59
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 2
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 58
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 3
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 57
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 4
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 56
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 5
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 55
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
 [Q-A] The waiting list is empty, there is no process available in order to be picked.
+[CPU] No process has been scheduled, has queues are empty.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 6
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU IS IDLE.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Is currently idle.
+[CPU] Process P1 is now using the CPU.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 7
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 54
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 8
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 53
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 9
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 52
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 10
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 51
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 11
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 50
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] The waiting list is empty, there is no process available in order to be picked.
+[CPU] No process has been scheduled, has queues are empty.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 12
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU IS IDLE.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Is currently idle.
+[CPU] Process P1 is now using the CPU.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 13
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 49
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 14
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 48
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 15
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 47
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 16
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 46
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 17
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 45
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] The waiting list is empty, there is no process available in order to be picked.
+[CPU] No process has been scheduled, has queues are empty.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 18
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU IS IDLE.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Is currently idle.
+[CPU] Process P1 is now using the CPU.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 19
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 44
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 20
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[I/O] No process has arrived at current clock cycle.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 43
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 21
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[I/O] Checking for any incoming jobs at current clock.
+[PROCESS] New process P2 has arrived, with burst time: 6
+[Q-A] Process P2 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P2]
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 42
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 22
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 41
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 23
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 40
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P2 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
 [CPU] Process P1 has left the CPU.
+[CPU] Process P2 is now using the CPU.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 24
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P2
+[PROCESS] Remaining burst time of process: P2 has been updated to 5
+[PROCESS] Checking if the process P2 has used its current time quantum.
+[PROCESS] Process P2 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 25
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P2
+[PROCESS] Remaining burst time of process: P2 has been updated to 4
+[PROCESS] Checking if the process P2 has used its current time quantum.
+[PROCESS] Process P2 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 26
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P2
+[PROCESS] Remaining burst time of process: P2 has been updated to 3
+[PROCESS] Checking if the process P2 has used its current time quantum.
+[PROCESS] Process P2 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 27
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P2
+[PROCESS] Remaining burst time of process: P2 has been updated to 2
+[PROCESS] Checking if the process P2 has used its current time quantum.
+[PROCESS] Process P2 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 28
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P2
+[PROCESS] Remaining burst time of process: P2 has been updated to 1
+[PROCESS] Checking if the process P2 has used its current time quantum.
+[PROCESS] Process P2 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Process P2 has left the CPU.
+[CPU] Process P1 is now using the CPU.
+[Q-A] Process P2 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P2]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 29
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 39
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 30
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 38
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 31
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 37
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 32
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 36
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 33
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 35
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P2 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Process P1 has left the CPU.
+[CPU] Process P2 is now using the CPU.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 34
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P2
+[PROCESS] Process : P2 has completed its total execution.
+[PROCESS] Remaining burst time of process: P2 has been updated to 0
+[PROCESS] Checking if the process P2 has used its current time quantum.
+[PROCESS] Process P2 is now fulfilled.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Process P2 has left the CPU.
+[CPU] Process P1 is now using the CPU.
+[M-Q] Process P2 has been added to list of finished processes.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 35
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 34
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 36
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 33
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 37
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 32
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 38
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 31
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 39
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 30
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] The waiting list is empty, there is no process available in order to be picked.
+[CPU] No process has been scheduled, has queues are empty.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 40
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU IS IDLE.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Is currently idle.
+[CPU] Process P1 is now using the CPU.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 41
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 29
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 42
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 28
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 43
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 27
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 44
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 26
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 45
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 25
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] The waiting list is empty, there is no process available in order to be picked.
+[CPU] No process has been scheduled, has queues are empty.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 46
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU IS IDLE.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Is currently idle.
+[CPU] Process P1 is now using the CPU.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 47
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 24
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 48
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 23
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 49
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 22
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 50
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 21
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 51
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 20
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] The waiting list is empty, there is no process available in order to be picked.
+[CPU] No process has been scheduled, has queues are empty.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 52
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU IS IDLE.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Is currently idle.
+[CPU] Process P1 is now using the CPU.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 53
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 19
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 54
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 18
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 55
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 17
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 56
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 16
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 57
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 15
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] The waiting list is empty, there is no process available in order to be picked.
+[CPU] No process has been scheduled, has queues are empty.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 58
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU IS IDLE.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Is currently idle.
+[CPU] Process P1 is now using the CPU.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 59
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 14
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 60
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 13
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 61
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 12
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 62
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 11
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 63
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 10
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] The waiting list is empty, there is no process available in order to be picked.
+[CPU] No process has been scheduled, has queues are empty.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 64
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU IS IDLE.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Is currently idle.
+[CPU] Process P1 is now using the CPU.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 65
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 9
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 66
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 8
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 67
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 7
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 68
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 6
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 69
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 5
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has used up its time quantum.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] The waiting list is empty, there is no process available in order to be picked.
+[CPU] No process has been scheduled, has queues are empty.
+[Q-A] Process P1 has been added to waiting list of Queue A successfully.
+[Q-A] The Queue A contains processes: [P1]
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 70
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A.
+[CPU] Checking if CPU is idle.
+[CPU] CPU IS IDLE.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] Process P1 has been picked from Queue A.
+[Q-A] The Queue A now contains processes: []
+[CPU] Is currently idle.
+[CPU] Process P1 is now using the CPU.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 71
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 4
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 72
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 3
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 73
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 2
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 74
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Remaining burst time of process: P1 has been updated to 1
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 has not used up its time quantum.
+--------------------------------------------------
+[CPU] Current Clock Cycle has been updated to: 75
+[Q-A] Checking for processes that can be cleaned up.
+[Q-A] No process needs clean up in Queue A, as is it empty.
+[CPU] Checking if CPU is idle.
+[CPU] CPU is not idle, and is held by process: P1
+[PROCESS] Process : P1 has completed its total execution.
+[PROCESS] Remaining burst time of process: P1 has been updated to 0
+[PROCESS] Checking if the process P1 has used its current time quantum.
+[PROCESS] Process P1 is now fulfilled.
+[Q-A] Trying to Pick a new process from Queue A.
+[Q-A] The waiting list is empty, there is no process available in order to be picked.
+[CPU] No process has been scheduled, has queues are empty.
+[M-Q] Process P1 has been added to list of finished processes.

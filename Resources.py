@@ -13,7 +13,9 @@ class Process():
     context_switches = None
     remaining_burst_time = None
     is_complete = None
-    
+    quantum = None
+    time_spent_in_cpu = None
+
 
     def __init__(self, name: str(), burst_time: float(), console) -> None:
         """
@@ -34,6 +36,9 @@ class Process():
             self.context_switches = 0
             self.remaining_burst_time = self.burst_time
             self.is_complete = False
+            self.quantum = 5
+            self.time_spent_in_cpu = 0
+            
             self.console.note_activity("[PROCESS] New process " + str(self.name) +" has arrived, with burst time: "+str(self.burst_time))
         except Exception as e:
             print("[ERR] The following error occured while trying to create a new process: "+str(e))
@@ -44,6 +49,12 @@ class Process():
         """
         self.wait_time = self.wait_time + 1
         self.console.note_activity("[PROCESS] wait time of process: " +str(self.name) + " has been increased by 1.")
+
+    def increase_time_in_cpu(self) -> None:
+        """
+        Increases the time spent at CPU by 1.
+        """
+        self.time_spent_in_cpu = self.time_spent_in_cpu + 1
 
     def get_remaining_time(self) -> int():
         """
@@ -109,6 +120,30 @@ class Queue_A():
         processes = [process.name for process in self.__waiting]
         return "[" + ", ".join(processes) +"]"
     
+    def clean_up(self) -> None:
+        """
+        Clean up the waiting list, make sure there are no processes that are completed!
+        """
+        try:
+            self.console.note_activity("[Q-A] Checking for processes that can be cleaned up.")
+            if self.is_empty():
+                self.console.note_activity("[Q-A] No process needs clean up in Queue A, as is it empty.")
+                return #Do nothing, as the Queue is Empty.
+            else:
+                #if there are processes present within the queue, lets check for processes and remove them if necessary.
+                for process in self.__waiting:
+                    if process.is_complete:
+                        self.console.note_activity("[Q-A] Process " + process.name + " has completed its execution, cleaning it up.")
+                        self.__waiting.remove(process)
+                        self.console.note_activity("[Q-A] Process clean up complete.")
+                    else:
+                        process.increase_wait_time()
+                        
+            
+            self.console.note_activity("[Q-A] No process needs clean up in Queue A.")        
+        except Exception as e:
+            print("[ERR] The following error occured while trying to clean up Queue A: "+str(e))
+
     def add_process_to_waiting(self, process: Process) -> bool:
         """
         This method receives a process and then adds it to the waiting list.
@@ -122,8 +157,10 @@ class Queue_A():
 
     def pick_process(self) -> Process:
         try:
+            self.console.note_activity("[Q-A] Trying to Pick a new process from Queue A.")
             if self.is_empty():
                 self.console.note_activity("[Q-A] The waiting list is empty, there is no process available in order to be picked.")
+                self.held_by = None
             else:
                 process = self.__waiting[0]
                 
@@ -155,10 +192,36 @@ class CPU():
         else:
             return False
         
+    def get_current_user(self) -> Process:
+        """
+        Returns the current process that has access/is using the CPU.
+        """
+        return self.held_by
+    
+    def is_idle(self) -> bool:
+        """
+        Returns True if the CPU is currently idle.
+        False otherwise.
+        """
+        if self.held_by is None:
+            return True
+        else:
+            return False
+        
+    def set_idle(self) -> None:
+        """
+        Sets CPU to IDLE status.
+        """
+        self.held_by = None
+        
     def give_access(self, process) -> None:
         """
         This method Provides access to the CPU.
         """
+        if process == None:
+            self.console.note_activity("[CPU] No process has been scheduled, has queues are empty.")
+            self.set_idle()
+            return
         if self.is_held_by(process=process):
             self.console.note_activity("[CPU-ERR] Process "+str(process.name)+" already has the CPU and is still requesting for CPU.")
         else:
