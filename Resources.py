@@ -267,9 +267,30 @@ class Queue_B():
     __front = None
     __rear = None
     __TIME_QUANTUM = None
+    __waiting = None
 
     def __init__(self) -> None:
-
         self.__TIME_QUANTUM = 40
         self.__NAME = "B"
-    
+        self.__waiting = list()
+
+    def pick_process(self) -> None:
+        pass
+
+    def add_process_to_waiting(self, process: Process) -> bool:
+        """
+        This method receives a process and then adds it to the waiting list.
+        """
+        try:
+            self.__waiting.append(process)
+            self.console.note_activity("[Q-A] Process " + process.name + " has been added to waiting list of Queue A successfully.")
+            self.console.note_activity("[Q-A] The Queue A contains processes: "+self.get_waiting_process())
+        except Exception as e:
+            print("[ERR] The following error occured while trying to add the new process to the Queue A waiting list: %s"%(str(e)))
+
+    def get_waiting_process(self) -> str():
+        """
+        Returns a string of processes waiting within Queue A.
+        """
+        processes = [process.name for process in self.__waiting]
+        return "[" + ", ".join(processes) +"]" 
