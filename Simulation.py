@@ -68,16 +68,18 @@ class Simulation():
         This method, is called after all process have been completed.
         """
         try:
+            
             print("-"*75)
-            print("The following are the process statistics in the order of their completion:")
+            print("[STATS] The following are the process statistics in the order of their completion:")
             for process in self.__completed_processes:
+                print('\n\n')
                 stars = " *"*5
                 print(stars+" Process Name: "+process.name+stars)
-                print("Arrived at: "+str(process.get_arrival_time()))
-                print("Burst Time: "+str(process.burst_time))
-                print("Total waiting time: "+str(process.wait_time))
-                print("Total context switches: "+str(process.context_switches))
-                print("Time of Completion: ")
+                print("[STATS] Arrived at: "+str(process.get_arrival_time()))
+                print("[STATS] Burst Time: "+str(process.burst_time))
+                print("[STATS] Total waiting time: "+str(process.wait_time))
+                print("[STATS] Total context switches: "+str(process.context_switches))
+                print("[STATS] Time of Completion: "+str(process.time_of_completion))
 
 
         except Exception as e:
@@ -150,7 +152,8 @@ class Simulation():
                             
                         self.cpu.give_access(process)
                         if current_process!=None and current_process.is_complete:
-                            self.__completed_processes.append(current_process)
+                            current_process.set_completion_time(clock=clock) #Note the time of completion for the process.
+                            self.__completed_processes.append(current_process) #Add the process to the list of completed processes.
                             self.console.note_activity("[M-Q] Process "+current_process.name+" has been added to list of finished processes.")
                         else:
                             self.qa.add_process_to_waiting(current_process)

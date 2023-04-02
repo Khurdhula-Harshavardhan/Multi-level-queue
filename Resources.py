@@ -260,3 +260,16 @@ class CPU():
     def update_clock_cycle(self, clock_cycle) -> None:
         self.current_clock_cycle = clock_cycle
         self.console.note_activity("-"*50 + "\n[CPU] Current Clock Cycle has been updated to: "+str(self.current_clock_cycle))
+
+
+class Queue_B():
+    __NAME = None
+    __front = None
+    __rear = None
+    __TIME_QUANTUM = None
+
+    def __init__(self) -> None:
+
+        self.__TIME_QUANTUM = 40
+        self.__NAME = "B"
+    
