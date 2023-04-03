@@ -21,6 +21,8 @@ class Simulation():
     console = None
     qa = None
     __current_processs = None
+    best_demotion = None
+    best_dispatch = None
 
     def __init__(self) -> None:
         self.console = Console()
@@ -29,6 +31,7 @@ class Simulation():
         self.__total_processes =0
         self.qb = Queue_B(self.console)
         self.__total_dispatches = 0
+        self.lowest_wait = 0
     
     def convert_data(self) -> None:
         """
@@ -73,35 +76,36 @@ class Simulation():
             self.console.note_activity("[PROCESS] Process "+ process.name + " has not used up its time quantum.")
             return False
         
-    def view_statistics(self, clock) -> None:
+    def view_statistics(self, clock) -> float():
         """
         This method, is called after all process have been completed.
         """
         try:
             
-            print("-"*75)
+            
             
             longest_wait = 0
             total_wait = 0
-            print("[STATS] The following are the process statistics in the order of their completion:")
-            print("Demotion Criteria: "+str(self.__demotion_criteria))
-            print("Dispatch Ratio: "+str(self.__dispatch_ratio))
+            
             for process in self.__completed_processes:
-               
+                
                 stars = " *"*5
                 if process.wait_time >= longest_wait:
                     longest_wait = process.wait_time
                 total_wait = total_wait + process.wait_time
-               
+                # print(stars+" Process Name: "+process.name+stars)
+                # print("[STATS] Arrived at: "+str(process.get_arrival_time()))
+                # print("[STATS] Burst Time: "+str(process.burst_time))
+                # print("[STATS] Total waiting time: "+str(process.wait_time))
+                # print("[STATS] Total context switches: "+str(process.context_switches))
+                # print("[STATS] Time of Completion: "+str(process.time_of_completion))
             
-            
-            print("Total CPU idles: "+str(self.cpu.total_idle//2))
-            print("End Time: " +str(clock+1))
-            print("Processes Completed: "+str(len(self.__completed_processes)))
-            print("longest wait time: "+str(longest_wait))
-            print("Total Wait Time: "+str(total_wait))
-            print("Average Wait time: "+str((total_wait/len(self.__completed_processes))))
-
+            avg_wait = (total_wait/len(self.__completed_processes))
+            if avg_wait<=self.lowest_wait:
+                self.lowest_wait = avg_wait
+                self.best_demotion = self.__demotion_criteria
+                self.best_dispatch = self.__dispatch_ratio
+            return avg_wait
         except Exception as e:
             print("[ERR] The following error occured while trying to display statistics: "+str(e))
 
@@ -136,7 +140,35 @@ class Simulation():
         else:
             return False
 
-    def run(self) -> None:
+    def main_start(self)-> None:
+        """
+        Check for main starting point of the program:
+        """
+        counter = 0
+        avg_time = 10000000
+        best_dem = 0
+        best_dis = 0
+        for demotion in range(1, 35):
+            for dispatch in range(1, 35):
+                counter = counter + 1
+                
+                avg_wait = self.run(dispatch=dispatch, demotion=demotion)
+                
+                if avg_wait<=avg_time:
+                    avg_time = avg_wait
+                    best_dem = demotion
+                    best_dis = dispatch
+                    print("Avg Wait time: "+str(avg_time)+" Demotion: "+str(demotion)+" Dispatch: "+str(dispatch), end="\r")
+
+
+        print("After "+str(counter)+" Executions with different pairs of Demotion Criteria and Dispatch Ratio found these two the best for This Queue:")
+        print("Best Dispatch: "+str(best_dis))
+        print("Best Demotion: "+str(best_dem))
+        print("Best avg time: "+str(avg_time))
+
+        
+
+    def run(self, dispatch, demotion) -> None:
         """
         Starting point of the Simulation for this Multi level queue.
         """
@@ -144,13 +176,13 @@ class Simulation():
             
             #Get user inputs.
             self.console.note_activity("[I/O] Asking user for job file name.")
-            file_name = input("Please enter the job file name: ")
+            file_name = "Jobs.txt" #input("Please enter the job file name: ")
             self.console.note_activity("[I/O] User entered the following string for job file name: " +file_name)
             self.console.note_activity("[I/O] Asking user for Dispatch Ratio.")
-            self.__dispatch_ratio = int(input("Please enter dispatch ratio: "))
+            self.__dispatch_ratio = dispatch
             self.console.note_activity("[I/O] User entered the following value for Dispatch Ratio: "+str(self.__dispatch_ratio))
             self.console.note_activity("[I/O] Asking user for Demotion Criteria.")
-            self.__demotion_criteria = int(input("Please enter demotion criteria: "))
+            self.__demotion_criteria = demotion
             self.console.note_activity("[I/O] User entered the following value for Demotion Criteria: "+str(self.__demotion_criteria))
             self.__file_handler = open(file_name, "r", encoding="UTF-8")
             self.data = self.__file_handler.read()
@@ -251,12 +283,12 @@ class Simulation():
                 self.qb.clean_up()
                 #update clock
                 clock = clock + 1
-            self.view_statistics(clock)
+                #
+            return self.view_statistics(clock)
         except Exception as e:
             print("[ERR] The following error occured while execution: "+str(e))
 
-    def __del__(self) -> None:
-        self.console.flush()
+    
 
 OBJ = Simulation()
-OBJ.run()
+OBJ.main_start()

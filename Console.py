@@ -23,7 +23,8 @@ class Console():
             if len(activity.strip()) == 0 or activity is None:
                 raise Exception("Invalid log provided!")
             else:
-                self.__history.append(activity)
+                pass
+                #self.__history.append(activity)
         except Exception as e:
             print("[ERR] The following error occured while trying to take note of the activity: "+str(e))
     

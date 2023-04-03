@@ -17,8 +17,9 @@ class Process():
     time_spent_in_cpu = None
     arrival_time = None
     time_of_completion = None
+    chances = None
 
-    def __init__(self, name: str(), burst_time: float(), arrival_time: float(),console) -> None:
+    def __init__(self, name: str(), burst_time: float(), arrival_time: float(),console, chances) -> None:
         """
         Initializes the process properties, that are unique to each process.
         """
@@ -40,9 +41,19 @@ class Process():
             self.quantum = 5
             self.time_spent_in_cpu = 0
             self.arrival_time = arrival_time
+            self.chances = chances
             self.console.note_activity("[PROCESS] New process " + str(self.name) +" has arrived, with burst time: "+str(self.burst_time))
         except Exception as e:
             print("[ERR] The following error occured while trying to create a new process: "+str(e))
+    
+    def decrease_chances(self) -> None:
+        """
+        Decreases the chances left inorder to be added to Queue A again.
+        """
+        if (self.chances - 1) <= 0:
+            self.chances = 0
+        else:
+            self.chances = self.chances - 1 
 
     def get_arrival_time(self) -> float:
         """
@@ -56,6 +67,7 @@ class Process():
         """
         self.wait_time = self.wait_time + 1
         self.console.note_activity("[PROCESS] wait time of process: " +str(self.name) + " has been increased by 1.")
+        self.console.note_activity("[PROCESS] Total wait time of process: " +str(self.name) + " is "+str(self.wait_time))
 
     def increase_time_in_cpu(self) -> None:
         """
@@ -69,7 +81,7 @@ class Process():
         """
         return self.remaining_burst_time
 
-    def set_remaining_time(self, time: float()) -> None:
+    def set_remaining_time(self, time: float(), clock) -> None:
         """
         Reduces the total waiting time by given time.
         """
@@ -79,6 +91,7 @@ class Process():
             self.remaining_burst_time = 0
             self.is_complete = True
             self.console.note_activity("[PROCESS] Process : " +str(self.name) + " has completed its total execution.")
+            self.set_completion_time(clock=clock)
         self.console.note_activity("[PROCESS] Remaining burst time of process: " +str(self.name) + " has been updated to "+ str(self.remaining_burst_time))
     
     def increase_context_switches(self) -> None:
@@ -140,7 +153,7 @@ class Queue_A():
         processes = [process.name for process in self.__waiting]
         return "[" + ", ".join(processes) +"]"
     
-    def clean_up(self) -> None:
+    def clean_up(self, current_process=None) -> None:
         """
         Clean up the waiting list, make sure there are no processes that are completed!
         """
@@ -157,8 +170,8 @@ class Queue_A():
                         self.__waiting.remove(process)
                         self.console.note_activity("[Q-A] Process clean up complete.")
                     else:
+                    
                         process.increase_wait_time()
-                        
             
             self.console.note_activity("[Q-A] No process needs clean up in Queue A.")        
         except Exception as e:
@@ -169,7 +182,9 @@ class Queue_A():
         This method receives a process and then adds it to the waiting list.
         """
         try:
+            process.time_spent_in_cpu=0
             self.__waiting.append(process)
+            process.decrease_chances()
             self.console.note_activity("[Q-A] Process " + process.name + " has been added to waiting list of Queue A successfully.")
             self.console.note_activity("[Q-A] The Queue A contains processes: "+self.get_waiting_process())
         except Exception as e:
@@ -180,7 +195,7 @@ class Queue_A():
             self.console.note_activity("[Q-A] Trying to Pick a new process from Queue A.")
             if self.is_empty():
                 self.console.note_activity("[Q-A] The waiting list is empty, there is no process available in order to be picked.")
-                self.held_by = None
+                return None
             else:
                 process = self.__waiting[0]
                 
@@ -197,9 +212,14 @@ class CPU():
     held_by = None
     current_clock_cycle = None
     console = None
+    total_idle = None
+    idle_time = None
+    previous_process = None
     def __init__(self, console) -> None:
         self.console = console
         self.console.note_activity("[CPU] CPU has been initialized successfully.")
+        self.total_idle = 0
+        self.idle_time = 0
 
     def is_held_by(self, process) -> bool:
         """
@@ -224,6 +244,7 @@ class CPU():
         False otherwise.
         """
         if self.held_by is None:
+            
             return True
         else:
             return False
@@ -233,13 +254,15 @@ class CPU():
         Sets CPU to IDLE status.
         """
         self.held_by = None
+        self.total_idle = self.total_idle + 1
+        self.console.note_activity("[CPU] CPU total idle has been updated to: "+str(self.total_idle))
         
     def give_access(self, process) -> None:
         """
         This method Provides access to the CPU.
         """
         if process == None:
-            self.console.note_activity("[CPU] No process has been scheduled, has queues are empty.")
+            self.console.note_activity("[CPU] No process has been scheduled, as queues are empty.")
             self.set_idle()
             return
         if self.is_held_by(process=process):
@@ -252,6 +275,7 @@ class CPU():
                 
             else:
                 self.console.note_activity("[CPU] Process "+self.held_by.name+" has left the CPU.")
+                self.previous_process = self.held_by
                 self.held_by = process
                 self.console.note_activity("[CPU] Process "+process.name+" is now using the CPU.")
             process.increase_context_switches()
@@ -268,29 +292,88 @@ class Queue_B():
     __rear = None
     __TIME_QUANTUM = None
     __waiting = None
-
-    def __init__(self) -> None:
+    console = None
+    def __init__(self, console) -> None:
         self.__TIME_QUANTUM = 40
         self.__NAME = "B"
         self.__waiting = list()
+        self.console = console
 
-    def pick_process(self) -> None:
-        pass
+    def pick_process(self) -> Process:
+        try:
+            self.console.note_activity("[Q-B] Trying to Pick a new process from Queue B.")
+            if self.is_empty():
+                self.console.note_activity("[Q-B] The waiting list is empty, there is no process available in order to be picked.")
+                return None
+            else:
+                process = self.__waiting[0]
+                
+                self.__waiting.remove(process)
+                self.console.note_activity("[Q-B] Process "+process.name+" has been picked from Queue B.")
+                self.console.note_activity("[Q-B] The Queue B now contains processes: "+self.get_waiting_process())
+                
+                return process
+                
+        except Exception as e:
+            print("[ERR] The following error occured while trying to pick a process from Queue B: "+str(e))
+    
 
+    #everytime we add a process to the Queue we must sort the Queue in such a way that the shortest job is put at the front of the Queue.
     def add_process_to_waiting(self, process: Process) -> bool:
         """
         This method receives a process and then adds it to the waiting list.
         """
         try:
+            process.quantum = self.__TIME_QUANTUM
+            process.time_spent_in_cpu = 0
             self.__waiting.append(process)
-            self.console.note_activity("[Q-A] Process " + process.name + " has been added to waiting list of Queue A successfully.")
-            self.console.note_activity("[Q-A] The Queue A contains processes: "+self.get_waiting_process())
+            self.console.note_activity("[Q-B] Process " + process.name + " has been added to waiting list of Queue B successfully.")
+            
+
+            self.__waiting.sort(key=lambda x: x.remaining_burst_time)
+            self.console.note_activity("[Q-B] Queue B has now been sorted in accordance to the Shortest Job First.")
+            self.console.note_activity("[Q-B] The Queue B contains processes: "+self.get_waiting_process())
         except Exception as e:
-            print("[ERR] The following error occured while trying to add the new process to the Queue A waiting list: %s"%(str(e)))
+            print("[ERR] The following error occured while trying to add the new process to the Queue B waiting list: %s"%(str(e)))
 
     def get_waiting_process(self) -> str():
         """
-        Returns a string of processes waiting within Queue A.
+        Returns a string of processes waiting within Queue B.
         """
         processes = [process.name for process in self.__waiting]
-        return "[" + ", ".join(processes) +"]" 
+        return "[" + ", ".join(processes) +"]"
+    
+    def is_empty(self) -> bool:
+        """
+        Returns a boolean value, 
+        True if there are no elements within the list waiting.
+        False, otherwise.
+        """
+        if len(self.__waiting) == 0:
+            return True
+        else:
+            return False
+    
+    def clean_up(self, current_process=None) -> None:
+        """
+        Clean up the waiting list, make sure there are no processes that are completed!
+        """
+        try:
+            self.console.note_activity("[Q-B] Checking for processes that can be cleaned up.")
+            if self.is_empty():
+                self.console.note_activity("[Q-B] No process needs clean up in Queue B, as is it empty.")
+                return #Do nothing, as the Queue is Empty.
+            else:
+                #if there are processes present within the queue, lets check for processes and remove them if necessary.
+                for process in self.__waiting:
+                    if process.is_complete:
+                        self.console.note_activity("[Q-B] Process " + process.name + " has completed its execution, cleaning it up.")
+                        self.__waiting.remove(process)
+                        self.console.note_activity("[Q-B] Process clean up complete.")
+                    else:
+                    
+                        process.increase_wait_time()
+        
+            self.console.note_activity("[Q-B] No process needs clean up in Queue B.")        
+        except Exception as e:
+            print("[ERR] The following error occured while trying to clean up Queue A: "+str(e))
