@@ -1,0 +1,33 @@
+Case 1:
+Please enter the job file name: Jobs.txt
+Please enter dispatch ratio: 5
+Please enter demotion criteria: 5
+---------------------------------------------------------------------------
+[STATS] The following are the process statistics in the order of their completion:
+Demotion Criteria: 5
+Dispatch Ratio: 5
+Total CPU idles: 25
+End Time: 14321
+Processes Completed: 401
+longest wait time: 6567
+Total Wait Time: 839520
+Average Wait time: 2093.56608478803
+[INFO] Trying to write all activity to log.txt
+[INFO] log.txt updated successfully.
+
+Case 2:
+Please enter the job file name: Jobs.txt
+Please enter dispatch ratio: 10
+Please enter demotion criteria: 5
+---------------------------------------------------------------------------
+[STATS] The following are the process statistics in the order of their completion:
+Demotion Criteria: 5
+Dispatch Ratio: 10
+Total CPU idles: 77
+End Time: 14321
+Processes Completed: 401
+longest wait time: 13424
+Total Wait Time: 631835
+Average Wait time: 1575.6483790523691
+[INFO] Trying to write all activity to log.txt
+[INFO] log.txt updated successfully.

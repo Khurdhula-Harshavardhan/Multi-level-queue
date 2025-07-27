@@ -1,0 +1,34 @@
+PS D:\MyGitHub\os\Multi-level-queue> & C:/Users/Sanju/AppData/Local/Programs/Python/Python311/python.exe d:/MyGitHub/os/Multi-level-queue/Simulation.py
+Please enter the job file name: TestCase.txt
+Please enter dispatch ratio: 10
+Please enter demotion criteria: 5
+---------------------------------------------------------------------------       
+[STATS] The following are the process statistics in the order of their completion:
+Demotion Criteria: 5
+Dispatch Ratio: 10
+Total CPU idles: 3
+End Time: 68
+Processes Completed: 2
+longest wait time: 13
+Total Wait Time: 18
+Average Wait time: 9.0
+[INFO] Trying to write all activity to log.txt
+[INFO] log.txt updated successfully.
+PS D:\MyGitHub\os\Multi-level-queue> 
+
+
+Please enter the job file name: TestCase.txt
+Please enter dispatch ratio: 5
+Please enter demotion criteria: 5
+---------------------------------------------------------------------------       
+[STATS] The following are the process statistics in the order of their completion:
+Demotion Criteria: 5
+Dispatch Ratio: 5
+Total CPU idles: 3
+End Time: 68
+Processes Completed: 2
+longest wait time: 13
+Total Wait Time: 18
+Average Wait time: 9.0
+[INFO] Trying to write all activity to log.txt
+[INFO] log.txt updated successfully.

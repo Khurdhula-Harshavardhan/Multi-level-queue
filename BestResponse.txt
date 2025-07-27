@@ -1,0 +1,15 @@
+The following are the varios iterations and their corresponding avg wait times.
+PS D:\MyGitHub\os\Multi-level-queue> & C:/Users/Sanju/AppData/Local/Programs/Python/Python311/python.exe d:/MyGitHub/os/Multi-level-queue/trail.py
+Best Dispatch: 14
+Best Demotion: 2
+Best avg time: 1166.1922871392946
+PS D:\MyGitHub\os\Multi-level-queue> & C:/Users/Sanju/AppData/Local/Programs/Python/Python311/python.exe d:/MyGitHub/os/Multi-level-queue/trail.py
+After 576 Executions with different pairs of Demotion Criteria and Dispatch Ratio found these two the best for This Queue:
+Best Dispatch: 24
+Best Demotion: 1
+Best avg time: 1139.5568370739818
+PS D:\MyGitHub\os\Multi-level-queue> & C:/Users/Sanju/AppData/Local/Programs/Python/Python311/python.exe d:/MyGitHub/os/Multi-level-queue/trail.py
+After 1156 Executions with different pairs of Demotion Criteria and Dispatch Ratio found these two the best for This Queue:
+Best Dispatch: 34
+Best Demotion: 1
+Best avg time: 1116.159674343553
